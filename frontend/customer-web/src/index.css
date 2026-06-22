@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbf7f2;
+  color: #2b2420;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", serif;
+}
+
+/* Signature motif: a hand-stitched seam, used as a divider and as the
+   add-to-cart button's underline accent. Ties the UI back to the
+   product (clothing) rather than being a generic gradient/line. */
+.stitch-divider {
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #c99b5b 0,
+    #c99b5b 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.stitch-divider-v {
+  width: 1px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #c99b5b 0,
+    #c99b5b 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* Visible keyboard focus ring everywhere, per accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #9b2242;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbar for horizontal swipe rows (categories, flash sale) while
+   keeping them scrollable - common mobile commerce pattern */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
