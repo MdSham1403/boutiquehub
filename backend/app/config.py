@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     ADMIN_DEFAULT_PASSWORD: str = "changeme123"
 
     # CORS
-    ALLOWED_ORIGINS: str = "http://localhost:5173"
+    ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:5174,https://boutiquehub.vercel.app,https://admin-boutiquehub.vercel.app"
 
     @property
     def allowed_origins_list(self) -> list[str]:
